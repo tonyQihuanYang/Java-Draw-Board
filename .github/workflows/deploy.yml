@@ -102,5 +102,5 @@ jobs:
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.update-task-def.outputs.task-definition }}
-          service: gummui-apps
+          service: gummui-apps-api
           cluster: gummui-apps-cluster
