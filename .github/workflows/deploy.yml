@@ -102,5 +102,5 @@ jobs:
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.update-task-def.outputs.task-definition }}
-          service: draw-board-api-service
-          cluster: gummui-apps-cluster
+          service: gm-cluster-v1-draw-board-service-1
+          cluster: gummui-cluster-v1
