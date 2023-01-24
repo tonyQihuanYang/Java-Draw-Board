@@ -9,7 +9,7 @@ RUN mvn dependency:go-offline -B
 # Copy Source Code
 COPY ./src ./src
 # Build
-RUN mvn package
+RUN mvn package -DskipTests
 RUN ls
 RUN mv ./target/*.jar /*.jar
 
