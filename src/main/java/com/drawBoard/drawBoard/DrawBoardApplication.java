@@ -15,6 +15,18 @@ public class DrawBoardApplication {
 
   @GetMapping("/healthcheck")
   public String healthCheck() {
-    return "Ok-v2";
+    return "Ok";
   }
+
+
+  // @Bean
+  // public WebMvcConfigurer corsConfigurer() {
+  //     return new WebMvcConfigurer() {
+  //         @Override
+  //         public void addCorsMappings(CorsRegistry registry) {
+  //             registry.addMapping("/**").allowCredentials(true).allowedOrigins("*").allowedMethods("*");
+  //         }
+  //     };
+  // }
+
 }
