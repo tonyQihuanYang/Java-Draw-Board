@@ -15,6 +15,6 @@ public class DrawBoardApplication {
 
   @GetMapping("/healthcheck")
   public String healthCheck() {
-    return "Ok";
+    return "Ok!";
   }
 }
