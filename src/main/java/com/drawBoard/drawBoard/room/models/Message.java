@@ -1,4 +1,4 @@
-package com.drawBoard.drawBoard.room;
+package com.drawBoard.drawBoard.room.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,5 +14,5 @@ import lombok.ToString;
 public class Message {
   private String roomId;
   private String sendBy;
-  private String message;
+  private DrawPoint message;
 }
