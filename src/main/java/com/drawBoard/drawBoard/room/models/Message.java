@@ -14,5 +14,6 @@ import lombok.ToString;
 public class Message {
   private String roomId;
   private String sendBy;
-  private DrawPoint message;
+  private String message;
+  // private DrawPoint message;
 }

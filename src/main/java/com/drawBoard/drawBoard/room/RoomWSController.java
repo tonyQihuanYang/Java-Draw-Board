@@ -1,7 +1,7 @@
 package com.drawBoard.drawBoard.room;
 
-// import org.slf4j.Logger;
-// import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
@@ -15,7 +15,7 @@ public class RoomWSController {
   @Autowired
   private SimpMessagingTemplate simpMessagingTemplate;
 
-  // Logger logger = LoggerFactory.getLogger(RoomWSController.class);
+  Logger logger = LoggerFactory.getLogger(RoomWSController.class);
 
   @MessageMapping("/draw-room")
   public Message receiveDrawUpdate(@Payload Message message) {
