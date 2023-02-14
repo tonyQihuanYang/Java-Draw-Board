@@ -13,7 +13,6 @@ public class DrawBoardApplication {
 
   static Logger logger = LoggerFactory.getLogger(DrawBoardApplication.class);
   public static void main(String[] args) {
-    logger.info("Started...");
 		SpringApplication.run(DrawBoardApplication.class, args);
 	}
 
