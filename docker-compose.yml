@@ -14,7 +14,8 @@ services:
       PGDATA: /var/lib/postgresql/data/pgdata
 
   redis:
-    image: 'bitnami/redis:latest'
+    # image: 'bitnami/redis:latest'
+    image: 'public.ecr.aws/docker/library/redis:alpine3.17'
     ports:
       - '6379:6379'
     environment:
