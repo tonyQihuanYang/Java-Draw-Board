@@ -23,6 +23,9 @@ services:
 
   api_service:
     build: .
+    depends_on:
+      - postgres
+      - redis
     ports:
       - '8080:8080'
     environment:
@@ -32,12 +35,11 @@ services:
       SPRING_JPA_HIBERNATE_DDL_AUTO: 'create-drop'
       SPRING_DATASOURCE_HIKARI_CONNECTIONTIMEOUT: '20000'
       SPRING_DATASOURCE_HIKARI_MAXIMUMPOOLSIZE: '5'
+      spring.data.redis.host: 'redis'
+      spring.data.redis.port: 6379
     # volumes:
     #   - ./core-service:/*/
     # restart: always
-    depends_on:
-      - postgres
-      - redis
     links:
       - postgres
       - redis

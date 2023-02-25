@@ -11,10 +11,10 @@ import com.drawBoard.drawBoard.room.models.RoomUser;
 
 @RedisHash("Room")
 public class Room implements Serializable {
-  private Integer id;
+  private String id;
   private List<RoomUser> users;
 
-  public Room(Integer id) {
+  public Room(String id) {
     this.id = id;
     this.users = new ArrayList<RoomUser>();
   }
@@ -27,7 +27,7 @@ public class Room implements Serializable {
     this.users = this.users.stream().filter(user -> !user.getId().equals(userId)).collect(Collectors.toList());
   }
 
-  public Integer getId() {
+  public String getId() {
     return id;
   }
 

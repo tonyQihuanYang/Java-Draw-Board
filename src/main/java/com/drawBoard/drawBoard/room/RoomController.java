@@ -23,22 +23,25 @@ public class RoomController {
   }
 
   @GetMapping("{roomId}")
-  public Room getRoom(@PathVariable("roomId") Integer roomId) {
+  public Room getRoom(@PathVariable("roomId") String roomId) {
     return roomService.getRoom(roomId);
   }
 
   @PostMapping("create/{username}")
   public Room createRoom(@PathVariable("username") String userName) {
-    return roomService.createRoom(roomIdCounter.getAndIncrement(), roomUserIdCounter.getAndIncrement(), userName);
+    return roomService.createRoom(Integer.toString(roomIdCounter.getAndIncrement()),
+        roomUserIdCounter.getAndIncrement(),
+        userName);
   }
 
   @PostMapping("join/{roomId}/{username}")
-  public Room joinRoom(@PathVariable("roomId") Integer roomId, @PathVariable("username") String userName) {
+  public Room joinRoom(@PathVariable("roomId") String roomId, @PathVariable("username") String userName) {
     return roomService.joinRoom(roomId, roomUserIdCounter.getAndIncrement(), userName);
   }
 
   @PostMapping("left/{roomId}/{userId}")
-  public Room leftRoom(@PathVariable("roomId") Integer roomId, @PathVariable("userId") Integer userId) {
+  public Room leftRoom(@PathVariable("roomId") String roomId, @PathVariable("userId") Integer userId) {
     return roomService.leftRoom(roomId, userId);
   }
 }
+//
