@@ -31,7 +31,7 @@ public class RoomServiceTest {
 
   @Test
   void shouldCreateRoomSuccess() {
-    Integer roomIdStub = 1;
+    String roomIdStub = "1";
     Integer roomUserIdStub = 1;
     String roomUserNameStub = "UserName1";
 
@@ -43,7 +43,7 @@ public class RoomServiceTest {
   }
 
   void shouldThrowWhenCreateDuplicatedRoom() {
-    Integer roomIdStub = 1;
+    String roomIdStub = "1";
     Integer roomUserIdStub = 1;
     String roomUserNameStub = "UserName1";
 
@@ -56,7 +56,7 @@ public class RoomServiceTest {
 
   @Test
   void shouldFoundRoomSuccess() {
-    Integer roomIdStub = 2;
+    String roomIdStub = "2";
     Integer roomUserIdStub = 2;
     String roomUserNameStub = "UserName2";
     roomService.createRoom(roomIdStub, roomUserIdStub, roomUserNameStub);
@@ -69,7 +69,7 @@ public class RoomServiceTest {
 
   @Test
   void shouldThrowWhenNoRoomFound() {
-    Integer roomIdStub = 2;
+    String roomIdStub = "2";
     RoomNotFoundException thrown = assertThrows(RoomNotFoundException.class,
         () -> roomService.getRoom(roomIdStub));
     assertTrue(thrown.getClass().equals(RoomNotFoundException.class));
@@ -77,7 +77,7 @@ public class RoomServiceTest {
 
   @Test
   void shouldAbleJoinRoomSuccess() {
-    Integer roomIdStub = 3;
+    String roomIdStub = "3";
     Integer roomOwnerIdStub = 3;
     String roomOnwerNameStub = "Owner3";
     Integer newPlayerIdStub = 4;
@@ -96,7 +96,7 @@ public class RoomServiceTest {
 
   @Test
   void shouldAbleLeftRoomSuccess() {
-    Integer roomIdStub = 3;
+    String roomIdStub = "3";
     Integer roomOwnerIdStub = 3;
     String roomOnwerNameStub = "Owner3";
     Integer newPlayerIdStub = 4;
@@ -114,7 +114,7 @@ public class RoomServiceTest {
 
   @Test
   void shouldCleanRoomWhenOwenerLeftRoom() {
-    Integer roomIdStub = 3;
+    String roomIdStub = "3";
     Integer roomOwnerIdStub = 3;
     String roomOnwerNameStub = "Owner3";
     Integer newPlayerIdStub = 4;

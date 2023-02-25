@@ -19,7 +19,7 @@ public class RoomService {
     this.roomRepository = roomRepository;
   }
 
-  public Room createRoom(Integer roomId, Integer userId, String userName) throws RoomAlreadyExistsException {
+  public Room createRoom(String roomId, Integer userId, String userName) throws RoomAlreadyExistsException {
     if (roomRepository.findById(roomId).isPresent()) {
       throw new RoomAlreadyExistsException("Room Existed");
     }
@@ -31,11 +31,11 @@ public class RoomService {
     return newRoom;
   }
 
-  public Room getRoom(Integer roomId) throws RoomNotFoundException {
+  public Room getRoom(String roomId) throws RoomNotFoundException {
     return roomRepository.findById(roomId).orElseThrow(RoomNotFoundException::new);
   }
 
-  public Room joinRoom(Integer roomId, Integer userId, String userName) throws RoomNotFoundException {
+  public Room joinRoom(String roomId, Integer userId, String userName) throws RoomNotFoundException {
     Room roomFound = getRoom(roomId);
     RoomUser player = new RoomUser(userId, userName, UserType.PLAYER);
     roomFound.addUser(player);
@@ -43,7 +43,7 @@ public class RoomService {
     return roomFound;
   }
 
-  public Room leftRoom(Integer roomId, Integer userId) throws RoomNotFoundException {
+  public Room leftRoom(String roomId, Integer userId) throws RoomNotFoundException {
     Room room = getRoom(roomId);
     Optional<RoomUser> userToRemove = room.getUsers().stream().filter(user -> user.getId().equals(userId)).findFirst();
 

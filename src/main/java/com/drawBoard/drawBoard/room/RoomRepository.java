@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface RoomRepository extends CrudRepository<Room, Integer> {
+public interface RoomRepository extends CrudRepository<Room, String> {
   List<Room> findAll();
 }
