@@ -1,4 +1,4 @@
-package com.drawBoard.drawBoard.room.models;
+package com.drawBoard.drawBoard.room.models.Messages;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +11,8 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class CanvasCoordinates {
-  private Long x;
-  private Long y;
+public class Message<T> {
+  private String roomId;
+  private String sendBy;
+  protected T message;
 }

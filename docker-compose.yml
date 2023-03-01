@@ -38,7 +38,7 @@ services:
       spring.data.redis.host: 'redis'
       spring.data.redis.port: 6379
     # volumes:
-    #   - ./core-service:/*/
+    #   - ./api-service:/*/
     # restart: always
     links:
       - postgres
