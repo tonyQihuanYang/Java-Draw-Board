@@ -1,6 +1,5 @@
 package com.drawBoard.drawBoard.room.models;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 

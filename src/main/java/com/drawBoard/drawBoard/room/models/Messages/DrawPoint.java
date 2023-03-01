@@ -1,4 +1,4 @@
-package com.drawBoard.drawBoard.room.models;
+package com.drawBoard.drawBoard.room.models.Messages;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
