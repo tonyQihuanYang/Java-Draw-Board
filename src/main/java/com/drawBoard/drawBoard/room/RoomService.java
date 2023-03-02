@@ -1,6 +1,5 @@
 package com.drawBoard.drawBoard.room;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.drawBoard.drawBoard.models.exceptions.RoomAlreadyExistsException;
@@ -14,7 +13,6 @@ import java.util.Optional;
 public class RoomService {
   private final RoomRepository roomRepository;
 
-  @Autowired
   private RoomService(RoomRepository roomRepository) {
     this.roomRepository = roomRepository;
   }
