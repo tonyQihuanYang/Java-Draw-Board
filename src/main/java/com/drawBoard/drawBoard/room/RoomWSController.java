@@ -1,7 +1,5 @@
 package com.drawBoard.drawBoard.room;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -10,13 +8,12 @@ import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 
 import com.drawBoard.drawBoard.room.models.Messages.DrawPoint;
+import com.drawBoard.drawBoard.room.models.Messages.RoomSyncMessage;
 
 @Controller
 public class RoomWSController {
   @Autowired
   private SimpMessagingTemplate simpMessagingTemplate;
-
-  Logger logger = LoggerFactory.getLogger(RoomWSController.class);
 
   @MessageMapping("/draw-room/{roomId}/syncRequest")
   public String receiveSyncRequest(@DestinationVariable String roomId, @Payload String message) {
@@ -25,7 +22,7 @@ public class RoomWSController {
   }
 
   @MessageMapping("/draw-room/{roomId}/sync")
-  public String receiveSync(@DestinationVariable String roomId, @Payload String message) {
+  public RoomSyncMessage receiveSync(@DestinationVariable String roomId, @Payload RoomSyncMessage message) {
     simpMessagingTemplate.convertAndSendToUser(roomId, "/sync", message);
     return message;
   }

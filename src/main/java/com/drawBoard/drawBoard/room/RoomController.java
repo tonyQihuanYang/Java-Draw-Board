@@ -2,7 +2,6 @@ package com.drawBoard.drawBoard.room;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,7 +15,6 @@ public class RoomController {
   private AtomicInteger roomIdCounter = new AtomicInteger();
   private AtomicInteger roomUserIdCounter = new AtomicInteger();
 
-  @Autowired
   public RoomController(RoomRepository roomRepository, RoomService roomService) {
     roomRepository.deleteAll();
     this.roomService = roomService;
